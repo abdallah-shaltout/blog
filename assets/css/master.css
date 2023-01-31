@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer component {
+    body {
+        @apply bg-body-1;
+        font-family: "Cairo", sans-serif;
+    }
+
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+    .flex-between {
+        @apply flex justify-between items-center;
+    }
+    .page-link-1 {
+        @apply !text-gray-600 trans  hover:bg-indigo-500 hover:!text-white px-5 py-2 rounded capitalize font-medium;
+    }
+    .page-link-1.router-link-exact-active {
+        @apply text-white;
+    }
+    .page-link-2 {
+        @apply !text-gray-500 trans hover:!text-main-1 font-medium capitalize relative mx-auto  w-fit block py-3 text-lg overflow-hidden before:content-[''] before:absolute before:bg-main-1 before:w-full before:h-[3px] before:rounded-lg before:-left-full  before:bottom-0  hover:before:left-0 before:transition-[left] before:duration-300 before:ease-in-out;
+    }
+    .page-link-2.router-link-exact-active {
+        @apply text-white before:left-0;
+    }
+    .menu {
+        @apply w-9 h-9;
+    }
+    .trans {
+        @apply transition-colors duration-300 ease-in-out;
+    }
+}
