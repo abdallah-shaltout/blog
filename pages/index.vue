@@ -5,11 +5,11 @@
             <div class="container">
                 <div class="grid grid-cols-3 lg:grid-cols-2 gap-4">
                     <TransitionGroup name="list">
-                        <PostCard v-for="(post, idx) in AllPosts" :key="idx" :post="post" />
+                        <PostCard v-for="post in AllPosts" :key="post.id" :post="post" />
                     </TransitionGroup>
                 </div>
             </div>
-            <button v-if="limit < PostsCount.result" @click="increment" class="text-white bg-main-1 block py-2 px-6 rounded mx-auto w-fit trans mt-14 hover:bg-main-2 font-semibold">
+            <button v-if="limit < PostsCount.result" @click="increment" class="btn-1-outline py-2 px-6 rounded mx-auto w-fit mt-14">
                 {{ loading ? "جاري التحميل ..." : "عرض المزيد" }}
             </button>
         </section>

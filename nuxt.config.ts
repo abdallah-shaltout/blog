@@ -1,6 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-    css: ["~/assets/css/main.css", "~/assets/css/other.css", "~/assets/css/master.css"],
+    css: ["~/assets/css/tailwind-base.css", "~/assets/css/tailwind-components.css", "~/assets/css/tailwind-utilities.css", "~/assets/css/master.css"],
     postcss: {
         plugins: {
             tailwindcss: {},
@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     },
     modules: ["nuxt-svgo"],
     app: {
-        pageTransition: { name: "page_transition", mode: "out-in" },
+        pageTransition: { name: "page_transition" },
         head: {
             // title: import.meta.env.NUXT_APP_TITLE?.toString() || "Shaltout Blog from Text",
             title: "Shaltout Blog",
@@ -28,5 +28,8 @@ export default defineNuxtConfig({
         // public: {
         //     // OTHER_NAME: process.env.NUXT_APP_TITLE,
         // },
+    },
+    routeRules: {
+        "/admin/**": { ssr: false },
     },
 });

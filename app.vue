@@ -1,8 +1,3 @@
 <template>
-    <main>
-        <AppHeader />
-        <NuxtPage />
-        <AppFooter />
-    </main>
+    <NuxtLayout />
 </template>
-<script setup lang="ts"></script>

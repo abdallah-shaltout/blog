@@ -1,0 +1,87 @@
+@tailwind components;
+@layer component {
+    .flex-center {
+        @apply flex justify-center items-center;
+    }
+    .flex-between {
+        @apply flex justify-between items-center;
+    }
+    .page-link-1 {
+        @apply !text-light-50 bg-dark-50/30 trans  hover:bg-primary hover:!text-light px-6 py-2 rounded capitalize font-medium;
+    }
+    .page-link-1.router-link-exact-active {
+        @apply text-light bg-primary;
+    }
+    .page-link-2 {
+        @apply !text-gray-500 trans hover:!text-primary font-medium capitalize relative mx-auto  w-fit block py-3 text-lg  before:content-[''] before:absolute before:bg-primary before:w-full before:h-[3px] before:rounded-lg before:!scale-x-0  before:bottom-0 before:origin-left hover:before:!scale-x-100 hover:before:origin-right before:transition-transform before:duration-300 before:ease-in-out;
+    }
+    .page-link-2.router-link-exact-active {
+        @apply !text-primary before:!scale-x-100;
+    }
+    .menu {
+        @apply w-9 h-9;
+    }
+    .trans {
+        @apply transition-colors duration-300 ease-in-out;
+    }
+    .menu-line {
+        @apply stroke-primary;
+    }
+    .post-body :where(h2, h3) {
+        @apply p-5 block !my-4 rounded-md text-2xl font-bold bg-dark text-light relative before:absolute before:content-[''] before:h-full before:right-0 before:top-0 before:bg-primary before:w-1;
+    }
+    .post-body img {
+        @apply block my-12 mx-auto aspect-auto;
+    }
+    .btn-1 {
+        @apply block rounded-sm !bg-primary !text-light-50 trans hover:!bg-primary-dark hover:!text-light font-semibold;
+    }
+    .btn-1-outline {
+        @apply block rounded-sm bg-transparent !text-light-50 !border-2 !border-primary border-solid trans hover:!bg-primary hover:!text-light font-semibold;
+    }
+    .card-shape :where(img, span) {
+        transition-property: left, top;
+        transition-timing-function: ease-in-out;
+        /* transition: left 0.5s ease, top 0.5s ease; */
+    }
+    .card-shape:hover span {
+        @apply !left-0 !top-0;
+    }
+    .card-shape:hover img {
+        @apply !left-0 !top-0;
+    }
+    .dashroom-section-title {
+        @apply text-center !text-4xl !font-bold text-light !mb-14;
+    }
+    .dashroom-top-card {
+        @apply flex flex-col gap-2 justify-center bg-dark p-4 shadow text-light-50 text-center rounded trans hover:bg-primary cursor-pointer;
+    }
+    .dashroom-top-card:hover > svg {
+        @apply !text-light;
+    }
+    .latest-posts li:nth-child(even) {
+        background-color: theme("colors.dark");
+    }
+    .latest-posts li:nth-child(odd) {
+        background-color: theme("colors.dark-50");
+    }
+
+    /* DropDown Start */
+
+    .dropdown {
+        @apply relative;
+    }
+    .dropdown .dropdown-title {
+        @apply !text-light-50 bg-dark-50/30 trans  hover:bg-primary hover:!text-light px-3 py-2.5 flex-between gap-6 rounded font-medium;
+    }
+    .dropdown .dropdown-title .icon {
+        @apply w-4 text-light transition-transform duration-200 ease-in;
+    }
+    .dropdown .dropdown-list {
+        @apply flex flex-col absolute bg-light w-40 rounded-sm shadow left-1/2 !-translate-x-1/2 top-full !mt-2 before:absolute z-50 before:content-[''] before:w-full before:h-1 before:bg-gradient-to-l before:from-green-500 before:to-green-600 before:-translate-y-full before:top-0 before:left-0;
+    }
+    .dropdown .dropdown-list .dropdown-link {
+        @apply p-2 block bg-slate-100 trans hover:bg-dark-50/10 text-right;
+    }
+    /* DropDown End */
+}

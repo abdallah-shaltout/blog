@@ -1,11 +1,11 @@
 <template>
-    <ul>
-        <!-- <li>
-            <router-link @click="closeMenu" :to="{ name: 'home' }" class="capitalize" :class="TheClass">home</router-link>
-        </li> -->
+    <ul dir="rtl">
         <li v-for="(link, idx) in links" :key="idx">
-            <a @click="closeMenu" href="https://google.com" class="capitalize" :class="TheClass">{{ link }}</a>
+            <NuxtLink @click="closeMenu" :to="{ name: link.name }" class="capitalize" :class="TheClass">{{ link.title }}</NuxtLink>
         </li>
+        <!-- <li v-for="(link, idx) in links" :key="idx">
+            <a @click="closeMenu" href="https://google.com" class="capitalize" :class="TheClass">{{ link }}</a>
+        </li> -->
     </ul>
 </template>
 <script setup>
@@ -16,7 +16,9 @@ const props = defineProps({
 });
 
 const emit = defineEmits(["CloseSidebar"]);
-const links = ref(["about", "projects", "contact"]);
+const links = ref([
+    { title: "الرئيسية", name: "index" },
+]);
 
 const closeMenu = () => {
     if (props.sidebar) {

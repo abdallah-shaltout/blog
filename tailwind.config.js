@@ -21,15 +21,23 @@ module.exports = {
                 nine: "90%",
             },
             colors: {
-                "main-1": "#04af77",
-                "main-2": "#008751",
-                "body-1": "#121212",
-                "body-2": "#0e0e0e",
-                "white-0": "#ffffffbf",
-                "white-1": "#eee",
-                "white-2": "#fff",
+                primary: "#144DDF",
+                "primary-dark": "#3f51b5",
+                gradient: ["#144DDF", "#3a4e9f"],
+                dark: "#121212",
+                "dark-50": "#444",
+                light: "#fefefe",
+                "light-50": "#dedede",
             },
         },
     },
+    safelist: [
+        {
+            pattern: /col-span-[1-6]/,
+        },
+        {
+            pattern: /text-([2-7]xl|xs|sm|base|lg|xl)/,
+        },
+    ],
     plugins: [],
 };

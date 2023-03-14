@@ -1,0 +1,16 @@
+@tailwind utilities;
+
+@layer utilities {
+    .flex-1 {
+        flex: 1;
+    }
+    .rtl {
+        direction: rtl;
+    }
+    .ltr {
+        direction: ltr;
+    }
+    header {
+        @apply ltr;
+    }
+}

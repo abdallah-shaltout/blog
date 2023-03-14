@@ -1,0 +1,16 @@
+@tailwind base;
+@layer base {
+    html {
+        @apply scroll-smooth;
+    }
+    body {
+        background-image: url("~/assets/images/background.jpg");
+        font-family: "Cairo", sans-serif;
+
+        /* background-size: 86.125rem; */
+        @apply bg-fixed bg-bottom bg-no-repeat bg-dark/50 relative before:content-[''] before:fixed before:w-full before:h-screen before:bg-dark/50 before:-z-10;
+    }
+    .container {
+        @apply !w-5/6 !max-w-6xl sm:!w-nine;
+    }
+}
